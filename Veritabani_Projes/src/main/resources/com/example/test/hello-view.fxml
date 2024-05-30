@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test.HelloController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="165.0" style="-fx-background-color: #A0DEFF;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="91.0" text="Ünvan:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="119.0" text="İsim:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="b_cagri" layoutX="10.0" layoutY="172.0" mnemonicParsing="false" onAction="#cagri" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #5AB2FF;" text="Müşteri çağrı listesi" textFill="#caf4ff">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Separator layoutX="11.0" layoutY="145.0" prefHeight="11.0" prefWidth="143.0" />
+            <ImageView fitHeight="71.0" fitWidth="70.0" layoutX="50.0" layoutY="14.0">
+               <image>
+                  <Image url="@../../../usericon.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="b_prim" layoutX="10.0" layoutY="231.0" mnemonicParsing="false" onAction="#prim" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #5AB2FF;" text="Aylık prim listesi" textFill="#caf4ff">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="b_itiraz" layoutX="11.0" layoutY="284.0" mnemonicParsing="false" onAction="#itiraz" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #5AB2FF;" text="İtirazlarım" textFill="#caf4ff">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+   <top>
+      <AnchorPane prefHeight="12.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="39.0" prefWidth="165.0" style="-fx-background-color: #A0DEFF;">
+               <children>
+                  <Label layoutX="30.0" layoutY="11.0" text="Çağrı Kayıt Sistemi" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="173.0" layoutY="11.0" text="Müşteri Çağrı Listesi " />
+            <Label layoutX="667.0" layoutY="11.0" text="DD/MM/YYYY" />
+            <Label layoutX="752.0" layoutY="11.0" text="Hoşgeldin Taha" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="416.0" prefWidth="683.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="pItiraz" layoutX="1.0" layoutY="-6.0" prefHeight="421.0" prefWidth="684.0">
+               <children>
+                  <TableView fx:id="PrimTable" prefHeight="364.0" prefWidth="683.0">
+                    <columns>
+                      <TableColumn fx:id="PId" minWidth="0.0" prefWidth="105.0" text="Prim id" />
+                        <TableColumn fx:id="Prim" prefWidth="371.0" text="Prim" />
+                        <TableColumn fx:id="PTarih" prefWidth="206.0" text="Tarih" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="button_itirazEt" layoutX="614.0" layoutY="382.0" mnemonicParsing="false" onAction="#itirazet" text="İtiraz Et" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pPrim" prefHeight="418.0" prefWidth="684.0" visible="false">
+               <children>
+                  <TableView fx:id="Itiraz" layoutX="1.0" prefHeight="366.0" prefWidth="681.0">
+                    <columns>
+                      <TableColumn fx:id="iAsistan" prefWidth="120.66668701171875" text="Asistan" />
+                      <TableColumn fx:id="iSicil" prefWidth="78.66665649414062" text="Sicil No" />
+                        <TableColumn fx:id="iTarih" prefWidth="151.3333740234375" text="İtiraz Tarihi" />
+                        <TableColumn fx:id="iAciklama" prefWidth="233.33331298828125" text="İtiraz Açıklaması" />
+                        <TableColumn fx:id="idurum" prefWidth="94.66668701171875" text="İtiraz Durumu" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="button_itiraz" layoutX="614.0" layoutY="379.0" mnemonicParsing="false" onAction="#itirazet" text="Itiraz Et" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pCagri" prefHeight="415.0" prefWidth="683.0" visible="false">
+               <children>
+                  <TableView fx:id="Cagri_Listesi" prefHeight="364.0" prefWidth="684.0">
+                    <columns>
+                      <TableColumn fx:id="Asistan" prefWidth="117.0" text="Asistan" />
+                      <TableColumn fx:id="Musteri" prefWidth="94.0" text="Müsteri" />
+                        <TableColumn fx:id="Tarih" minWidth="0.0" prefWidth="85.0" text="Tarih" />
+                        <TableColumn fx:id="Baslangic" prefWidth="145.0" text="Başlangıç" />
+                        <TableColumn fx:id="Bitis" prefWidth="150.0" text="Bitiş" />
+                        <TableColumn fx:id="Konu" prefWidth="92.0" text="Konu" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="button_Cagri" layoutX="600.0" layoutY="376.0" mnemonicParsing="false" onAction="#Yenicagri" text="Yeni Çağrı" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pItirazEtme" prefHeight="417.0" prefWidth="684.0" visible="false">
+               <children>
+                  <Button fx:id="button_itirazG" layoutX="581.0" layoutY="378.0" mnemonicParsing="false" onAction="#itirazgonder" text="İtirazı Gönder" />
+                  <TextArea fx:id="tfield_Itiraz" layoutX="12.0" layoutY="8.0" prefHeight="352.0" prefWidth="657.0" promptText="İtiraz Gerekçesini Giriniz" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
