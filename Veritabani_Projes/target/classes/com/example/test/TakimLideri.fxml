@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test.takimlideriController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="165.0" style="-fx-background-color: #A0DEFF;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="91.0" text="Ünvan:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="119.0" text="İsim:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="b_cagri" layoutX="10.0" layoutY="172.0" mnemonicParsing="false" onAction="#cagri" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #5AB2FF;" text="Itiraz Kayıtları" textFill="#caf4ff">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Separator layoutX="11.0" layoutY="145.0" prefHeight="11.0" prefWidth="143.0" />
+            <ImageView fitHeight="71.0" fitWidth="70.0" layoutX="50.0" layoutY="14.0">
+               <image>
+                  <Image url="@../../../usericon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <top>
+      <AnchorPane prefHeight="12.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="39.0" prefWidth="165.0" style="-fx-background-color: #A0DEFF;">
+               <children>
+                  <Label layoutX="30.0" layoutY="11.0" text="Çağrı Kayıt Sistemi" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="173.0" layoutY="11.0" text="Itiraz Kayıtlar Listesiı" />
+            <Label layoutX="667.0" layoutY="11.0" text="DD/MM/YYYY" />
+            <Label layoutX="752.0" layoutY="11.0" text="Hoşgeldin Taha" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="416.0" prefWidth="683.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="3.0" prefHeight="416.0" prefWidth="679.0">
+               <children>
+                  <TableView fx:id="view_Itiraz" layoutX="-1.0" layoutY="-9.0" prefHeight="354.0" prefWidth="681.0">
+                    <columns>
+                      <TableColumn fx:id="Asistan" prefWidth="96.0" text="Asistan" />
+                      <TableColumn fx:id="prim_ID" prefWidth="54.0" text="prim_ID" />
+                        <TableColumn fx:id="sicilNo" text="sicilNo" />
+                        <TableColumn fx:id="itirazAciklamasi" prefWidth="262.0" text="itirazAçıklaması" />
+                        <TableColumn fx:id="itiraz_tarihi" prefWidth="114.0" text="itiraz_tarihi" />
+                        <TableColumn fx:id="Durumlar" prefWidth="74.0" text="Durumlar" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="button_Itiraz" layoutX="579.0" layoutY="377.0" mnemonicParsing="false" onAction="#itiraz" text="İtiraz Cevapla" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
